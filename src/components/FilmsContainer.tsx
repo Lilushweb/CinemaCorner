@@ -12,8 +12,7 @@ const FilmsContainer = () => {
 
     return (
         <div className="blockFilm">
-
-            {data && console.log(data.items[0].kinopoiskId)}
+            {data && console.log(data.items[0].genres[0].genre)}
             {data && data.items.map((_, index: number) =>
             <FilmsItem key={data.items[index].kinopoiskId} film={data.items[index]} />
             )}

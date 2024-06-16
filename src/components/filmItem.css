@@ -13,3 +13,12 @@ img {
     border: 1px solid white;
     margin-left: 50px;
 }
+.genre {
+    border: 1px solid #454343;
+    border-radius: 30px;
+    background-color: #454343;
+    width: 170px;
+    height: auto;
+    margin-left: 66px;
+    margin-bottom: 10px;
+}
