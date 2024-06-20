@@ -1,0 +1,8 @@
+.starReting{
+    position: absolute;
+    width: 302px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+
+}

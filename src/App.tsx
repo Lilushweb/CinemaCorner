@@ -2,7 +2,8 @@
 import './App.css'
 import {filmsApi} from "./services/PostService.ts";
 import FilmsContainer from "./components/FilmsContainer.tsx";
-import './components/filmItem.css'
+import './style/filmItem.css'
+
 
 
 
