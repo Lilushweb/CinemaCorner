@@ -30,7 +30,7 @@ const ModelWind: React.FC <{ staff: IStaff }> = ({staff}) => {
                 <div className="contenerFilm">
                     <h3>Took part in the films :</h3>
                     {staff.films && staff.films.map((element, index) => (
-                        <div>
+                        <div key={index}>
                             <span key={index} className="staffFilm">{element.nameEn},</span>
                             <span> {element.rating ? `Reting: ${element.rating}` : ''}  in the role {element.professionKey.toLocaleLowerCase()}{staff.films[index + 1] ? "," : "."}</span>
                         </div>

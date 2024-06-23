@@ -11,8 +11,8 @@ export const filmsApi = createApi({
     }),
     endpoints: (build) => ({
         filmAll: build.query({
-            query: ()=>({
-                url: 'api/v2.2/films',
+            query: (page: number)=>({
+                url: `api/v2.2/films?page=${page}`,
                 method: 'GET',
                 headers: {
                     'X-API-KEY': '9def1b59-95af-4bed-ba7a-7c03a501568e',

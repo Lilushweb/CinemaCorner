@@ -10,16 +10,18 @@ import ErrorModalWind from "./ErrorModalWind.tsx"
 const FilmsItem: React.FC<IFilmItem> = ({film}) => {
     const {data} = filmsApi.useStaffQuery(film.kinopoiskId);
 
-    const parsRetingKinopoisk = film.ratingKinopoisk as number;
+
 
 
 
     return (
-        <div className="films" >
+        <div className="films">
             {!data && <ErrorModalWind/>}
             {data && <ModalWind staff={data}/>}
+            <div className="ratingContener">{<StarRating rating={film.ratingKinopoisk}/>}</div>
             <img alt={film.posterUrl} src={film.posterUrl}></img>
             <div className="infoIsFilm">
+
                 <span className="naemFilm">{film.nameOriginal || film.nameRu}</span>
                 <span className="yearFilm">Year of issue:
                 <span>{film.year}</span>
@@ -27,7 +29,7 @@ const FilmsItem: React.FC<IFilmItem> = ({film}) => {
                 {film.genres.map((item, index) =>
                     index < 2 ? <span className="genre" key={index}>{item.genre}</span> : null
                 )}
-                <div className="ratingContener">{<StarRating key={film.kinopoiskId} selectedStar={Math.floor(parsRetingKinopoisk)}/>}</div>
+
             </div>
         </div>
     );

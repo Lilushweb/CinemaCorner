@@ -1,27 +1,13 @@
-import React, { useState } from "react";
-import { FaStar } from "react-icons/fa";
-import '../style/starRating.css'
+import React from 'react';
 
-const createArray = length => [...Array(length)];
+const StarRating = ({rating}) => {
+    return (
+        <span style={{
+            color: rating > 5 ? "#66FF00" : "red",
+        }}>
+            {rating}
+        </span>
+    );
+};
 
-interface StarRatingProps {
-    totalStars?: number;
-    selectedStar?: number;
-}
-
-const Star = ({ selected = false , onSelect = f => f}) => (
-  <FaStar color={selected ? "red" : "grey"} onClick={onSelect} />
-);
-
-export default function StarRating({ totalStars = 10, selectedStar = 0 }: StarRatingProps) {
-  return (
-      <>
-      {createArray(totalStars).map((n, i) => (
-        <Star 
-        key={i} 
-        selected={selectedStar > i}
-        />
-      ))}
-      </>
-  );
-}
+export default StarRating;
