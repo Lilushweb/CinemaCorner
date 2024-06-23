@@ -1,0 +1,71 @@
+img {
+    position: absolute;
+    top: 3px;
+    height: 400px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.films {
+    position: relative;
+    height: 600px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: 1px solid white;
+    margin-left:30px;
+}
+.genre {
+    border: 1px solid #454343;
+    border-radius: 30px;
+    background-color: #454343;
+    width: 190px;
+    height: auto;
+    margin-left: 48px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttInfo{
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoIsFilm{
+position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top: 450px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.naemFilm{
+display: flex;
+    width: 302px;
+    justify-content: center;
+}
+.yearFilm{
+    display: flex;
+    align-items: start;
+    left: 10px;
+    width: 302px;
+    justify-content: space-evenly;
+}
+.ratingContener {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    left: 10px;
+
+
+
+
+}
+

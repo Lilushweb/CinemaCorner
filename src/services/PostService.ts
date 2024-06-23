@@ -1,44 +1,37 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-import {IPost} from "../store/models/IPost.ts";
 
 
-export const postApi = createApi({
-    reducerPath: 'postAPI',
+
+
+export const filmsApi = createApi({
+    reducerPath: 'filmsApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3000/'
+        baseUrl: 'https://kinopoiskapiunofficial.tech/'
     }),
     endpoints: (build) => ({
-        fetchAllPosts: build.query<IPost[], number>({
-            query: (limit = 2)=>({
-                url: '/posts',
-                params: {
-                    _limit: limit
+        filmAll: build.query({
+            query: (page: number)=>({
+                url: `api/v2.2/films?page=${page}`,
+                method: 'GET',
+                headers: {
+                    'X-API-KEY': '9def1b59-95af-4bed-ba7a-7c03a501568e',
+                    'Content-Type': 'application/json',
+                },
+            }),
+        }),
+        staff: build.query({
+            query: (filmId: number) => ({
+                url: `api/v1/staff/${filmId}`,
+                method: 'GET',
+                headers: {
+                    'X-API-KEY': '9def1b59-95af-4bed-ba7a-7c03a501568e',
+                    'Content-Type': 'application/json',
                 }
-            })
-        }),
-        createPost: build.mutation<IPost, IPost>({
-            query: (post)=>({
-                url: '/posts',
-                method: 'POST',
-                body: post
-            })
-        }),
-        updatePost: build.mutation<IPost, IPost>({
-            query: (post)=>({
-                url: `/posts/${post.id}`,
-                method: 'PUT',
-                body: post
-            })
-        }),
-        deletePost: build.mutation<IPost, IPost>({
-            query: (post)=>({
-                url: `/posts/${post.id}`,
-                method: 'DELETE',
             })
         })
     })
 })
 
-export const {useFetchAllPostsQuery} = postApi
+
 

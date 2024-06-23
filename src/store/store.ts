@@ -1,11 +1,11 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import  userReducer from './reducers/UserSlice'
-import {postApi} from "../services/PostService.ts";
+import {filmsApi} from "../services/PostService.ts";
 
 
 const rootReducer = combineReducers( {
     userReducer,
-    [postApi.reducerPath]: postApi.reducer
+    [filmsApi.reducerPath]: filmsApi.reducer
 })
 
 export const setupStore = () => {
@@ -13,7 +13,7 @@ export const setupStore = () => {
 
     return configureStore({
         reducer: rootReducer,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(postApi.middleware)
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(filmsApi.middleware)
     })
 }
 export type RootState = ReturnType<typeof rootReducer>
