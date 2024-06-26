@@ -1,10 +1,11 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import  userReducer from './reducers/UserSlice'
 import {filmsApi} from "../services/PostService.ts";
+import filmsReducer from "../store/reducers/filmsSlice.ts"
 
 
 const rootReducer = combineReducers( {
-    userReducer,
+    films: filmsReducer,
     [filmsApi.reducerPath]: filmsApi.reducer
 })
 

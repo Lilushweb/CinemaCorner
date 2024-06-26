@@ -1,0 +1,16 @@
+.dropDownMenu {
+
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    z-index: 3;
+    color: #535bf2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+
+
+}
