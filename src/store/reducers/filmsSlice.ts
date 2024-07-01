@@ -1,13 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+const initialState: { page: { [index: number]: any } } = {
+    page: {
+        1: {},
+        2: {},
+        3: {},
+        4: {},
+        5: {},
+    }
+}
 
 const filmsSlice = createSlice({
     name: 'films',
-    initialState: {
-        items: [],
-    },
+    initialState,
     reducers: {
-        setFilms: (state, action) => {
-            state.items = action.payload;
+        setFilms: (state, action: PayloadAction<{ page: number, films: any }>) => {
+            state.page[action.payload.page] = action.payload.films;
         },
 
     },

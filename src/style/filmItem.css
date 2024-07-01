@@ -68,4 +68,11 @@ display: flex;
 
 
 }
+.info {
+    position: relative;
+    left: 90px;
+    top: 280px;
+    width: 100px;
+    height: 24px;
+}
 

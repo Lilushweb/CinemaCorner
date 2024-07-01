@@ -34,5 +34,5 @@ export const filmsApi = createApi({
     })
 })
 
-
+export const {useFilmAllQuery} = filmsApi
 
