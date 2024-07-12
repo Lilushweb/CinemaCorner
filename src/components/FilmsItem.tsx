@@ -24,7 +24,7 @@ const FilmsItem: React.FC<IFilmItem> = ({film}) => {
             <img alt={film.posterUrl} src={film.posterUrl}></img>
             <div className="infoIsFilm">
 
-                <span className="naemFilm">{film.nameOriginal || film.nameRu}</span>
+                <span className="naemFilm">{film.nameRu || film.nameOriginal}</span>
                 <span className="yearFilm">Year of issue:
                 <span>{film.year}</span>
                 </span>

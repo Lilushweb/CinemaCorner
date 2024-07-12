@@ -10,13 +10,13 @@ interface IFilmsContainerProps {
 }
 
 const FilmsContainer: FC<IFilmsContainerProps> = ({  }) => {
+
     const [pages, setPages] = useState(1);
     useInfiniyLode(1,5)
     const selecter = useAppSelector((state) => state.films);
     const films = selecter && selecter.page[pages]? selecter.page[pages].items : [];
-    useEffect(() => {
-        console.log(films)
-    }, [films]);
+    const [currenPage, setCurrenPage] = useState(films.length > 0 ? [...films] : []);
+
 
 
     const [sortOrder, setSortOrder] = useState('asc');
@@ -39,6 +39,16 @@ const FilmsContainer: FC<IFilmsContainerProps> = ({  }) => {
         setSortType(type)
     }
 
+    const handClickLoder = () => {
+            setCurrenPage([...currenPage, films])
+            setPages(pages + 1)
+    }
+
+    useEffect(() => {
+        console.log(selecter)
+        console.log(currenPage)
+        console.log(films)
+    }, [pages, films, currenPage]);
     return (
         <div>
             <button onClick={handleSortChange}>По {sortOrder === 'возрастание' ? 'возрастание' : 'убывание'}</button>
@@ -53,7 +63,7 @@ const FilmsContainer: FC<IFilmsContainerProps> = ({  }) => {
                     </div>
                 )}
             </div>
-            {pages <= 4 && <button onClick={() => setPages(pages + 1)}>загрузить</button>}
+            {pages <= 4 && <button onClick={handClickLoder}>загрузить</button>}
         </div>
     );
 };
