@@ -1,29 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FaFilter} from "react-icons/fa";
 import '../style/naviget.css'
-import SortDropDownMenu from "./SortDropDownMenu.tsx";
 import {NavLink} from "react-router-dom";
 
 const Naviget = () => {
-    const [check, setCheck] = useState(false)
-
-    const handelClick = () => {
-        setCheck(!check)
-    }
-
-
     return (
         <nav>
             <div className="pageContenirTop">
                 <NavLink className="page" to={`/films/page/${1}`}>1</NavLink>
                 <NavLink className="page" to={`/films/page/${2}`}>2</NavLink>
+                <NavLink className="page" to={`/films/page/${3}`}>3</NavLink>
+                <NavLink className="page" to={`/films/page/${4}`}>4</NavLink>
+                <NavLink className="page" to={`/films/page/${5}`}>5</NavLink>
             </div>
-            <button className="sort" onClick={handelClick}><FaFilter/></button>
+            <button className="sort"><FaFilter/></button>
             <input className="serch" placeholder="Serch film"></input>
-            <SortDropDownMenu check={check}/>
             <div className="pageContenirBottom">
                 <NavLink className="page" to={`/films/page/${1}`}>1</NavLink>
                 <NavLink className="page" to={`/films/page/${2}`}>2</NavLink>
+                <NavLink className="page" to={`/films/page/${3}`}>3</NavLink>
+                <NavLink className="page" to={`/films/page/${4}`}>4</NavLink>
+                <NavLink className="page" to={`/films/page/${5}`}>5</NavLink>
             </div>
         </nav>
     );

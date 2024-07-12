@@ -11,7 +11,7 @@ interface IFilmsPageProps {
 const FilmsPage: FC <IFilmsPageProps> = ({page}) => {
     return (
         <div>
-            <Naviget />
+            <Naviget/>
             <FilmsContainer page={page}/>
         </div>
     );

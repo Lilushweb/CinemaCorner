@@ -1,70 +1,31 @@
-import React, { FC, useState, useEffect, useMemo } from 'react';
+import React, {FC} from 'react';
+import {filmsApi} from "../services/PostService.ts";
 import FilmsItem from "./FilmsItem.tsx";
 import '../style/filmsContaniet.css'
-import { IMapRender } from "../models/IMapRender.ts";
-import {useInfiniyLode} from "../store/hooks/infinituLoder.ts";
-import {useAppSelector} from "../store/hooks/redux.ts";
+import {NavLink} from "react-router-dom";
 
 interface IFilmsContainerProps {
     page: number
 }
 
-const FilmsContainer: FC<IFilmsContainerProps> = ({  }) => {
+const FilmsContainer: FC <IFilmsContainerProps>= ({page})  => {
+    const {data, isLoading, error} = filmsApi.useFilmAllQuery(page)
 
-    const [pages, setPages] = useState(1);
-    useInfiniyLode(1,5)
-    const selecter = useAppSelector((state) => state.films);
-    const films = selecter && selecter.page[pages]? selecter.page[pages].items : [];
-    const [currenPage, setCurrenPage] = useState(films.length > 0 ? [...films] : []);
+    console.log(page)
 
-
-
-    const [sortOrder, setSortOrder] = useState('asc');
-    const [sortType, setSortType] = useState('year')
-
-    const sortedFilms = useMemo(() => {
-        if (!films) return [];
-        if(sortType === "year"){
-            return [...films].sort((a, b) => sortOrder === 'возрастание' ? a.year - b.year : b.year - a.year);
-        } else if (sortType === "rating"){
-            return [...films].sort((a, b) => sortOrder === 'возрастание' ? a.ratingKinopoisk - b.ratingKinopoisk : b.ratingKinopoisk - a.ratingKinopoisk);
-        }
-    }, [films, sortOrder, sortType]);
-
-    const handleSortChange = () => {
-        setSortOrder(sortOrder === 'возрастание' ? 'убывание' : 'возрастание');
-    };
-
-    const handleSortTypeChange = (type: string) => {
-        setSortType(type)
-    }
-
-    const handClickLoder = () => {
-            setCurrenPage([...currenPage, films])
-            setPages(pages + 1)
-    }
-
-    useEffect(() => {
-        console.log(selecter)
-        console.log(currenPage)
-        console.log(films)
-    }, [pages, films, currenPage]);
+    // @ts-ignoreтз
     return (
         <div>
-            <button onClick={handleSortChange}>По {sortOrder === 'возрастание' ? 'возрастание' : 'убывание'}</button>
-            <button onClick={() => handleSortTypeChange("rating")}>Сортировка по рейтингу</button>
-            <button onClick={() => handleSortTypeChange("year")}>Сортировка по возрасту</button>
-            <div className="blockFilm">
 
-
-                {sortedFilms.map((element: IMapRender) =>
-                    <div>
-                       <FilmsItem key={element.kinopoiskId} film={element} />
-                    </div>
-                )}
+              <div className="blockFilm">
+                    {error && <h1>Ошибка</h1>}
+                    {isLoading && <h1>Идет загрузка...</h1>}
+                    {data && data.items.map((_, index: number) =>
+                <FilmsItem key={data.items[index].kinopoiskId} film={data.items[index]} />
+            )}
             </div>
-            {pages <= 4 && <button onClick={handClickLoder}>загрузить</button>}
         </div>
+
     );
 };
 

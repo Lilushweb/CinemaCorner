@@ -18,7 +18,6 @@ export const filmsApi = createApi({
                     'X-API-KEY': '9def1b59-95af-4bed-ba7a-7c03a501568e',
                     'Content-Type': 'application/json',
                 },
-                cacheTime: 300,
             }),
         }),
         staff: build.query({
