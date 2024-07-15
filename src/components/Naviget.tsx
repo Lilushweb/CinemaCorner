@@ -1,7 +1,7 @@
 import React from 'react';
-import {FaFilter} from "react-icons/fa";
+
 import '../style/naviget.css'
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Naviget = () => {
     return (
@@ -13,7 +13,6 @@ const Naviget = () => {
                 <NavLink className="page" to={`/films/page/${4}`}>4</NavLink>
                 <NavLink className="page" to={`/films/page/${5}`}>5</NavLink>
             </div>
-            <button className="sort"><FaFilter/></button>
             <input className="serch" placeholder="Serch film"></input>
             <div className="pageContenirBottom">
                 <NavLink className="page" to={`/films/page/${1}`}>1</NavLink>

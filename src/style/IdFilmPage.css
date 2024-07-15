@@ -5,6 +5,7 @@
     top: 14%;
     left: 2%;
 }
+
 .name {
     position: absolute;
     top: 14%;
@@ -19,9 +20,50 @@
     top: 28%;
     width: 11%;
 }
-.Karera{
+
+.Karera {
     color: white;
+    margin: 5px;
+    font-size: 22px;
+
 }
+
 .Actor {
-    color: #1a1a1a;
+    color: white;
+    margin: 6px;
+    font-size: 22px;
+}
+
+.facts {
+    position: absolute;
+    color: white;
+    width: 400px;
+    height: auto;
+    left: 700px;
+    top: 275px;
+    font-size: 22px;
+}
+
+.years {
+    position: absolute;
+    top: 550px;
+    left: 17%;
+}
+
+.age {
+    position: absolute;
+    top: 548px;
+    left: 5%;
+}
+
+.birthdayText {
+    position: absolute;
+    top: 500px;
+    left: 5%;
+}
+
+.birthday {
+    position: absolute;
+    top: 500px;
+    left: 15%;
 }

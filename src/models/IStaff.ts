@@ -1,21 +1,24 @@
 export interface IStaff {
-    age:  number
-    films: {
+    data: {
+        age: number
         description: string;
         filmId: number;
         general: boolean;
         nameEn: string;
         nameRu: string;
         professionKey: string;
+        facts: [string];
         rating: string;
-    }[];
-    growth:number
-    hasAwards: number
-    nameEn: string
-    nameRu: string
-    personId: number
-    posterUrl: string
-    profession: string
-    sex: string
-    webUrl: string
+        birthday: string;
+        birthplace: string;
+        personId: number
+        posterUrl: string
+        profession: string
+        sex: string
+        webUrl: string
+    },
+    error: boolean;
+    isLoading: boolean;
+
+
 }

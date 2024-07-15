@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 
 
@@ -11,7 +11,7 @@ export const filmsApi = createApi({
     }),
     endpoints: (build) => ({
         filmAll: build.query({
-            query: (page: number)=>({
+            query: (page: number) => ({
                 url: `api/v2.2/films?page=${page}`,
                 method: 'GET',
                 headers: {
@@ -29,9 +29,19 @@ export const filmsApi = createApi({
                     'Content-Type': 'application/json',
                 }
             })
+        }),
+        video: build.query({
+            query: (id: string) => ({
+                url: `/api/v2.2/films/${id}/videos`,
+                method: 'GET',
+                headers: {
+                    'X-API-KEY': '9def1b59-95af-4bed-ba7a-7c03a501568e',
+                    'Content-Type': 'application/json',
+                }
+            })
         })
     })
 })
 
-export const {useFilmAllQuery} = filmsApi
+export const { useFilmAllQuery } = filmsApi
 
