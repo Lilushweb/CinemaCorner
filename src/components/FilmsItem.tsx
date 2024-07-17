@@ -13,9 +13,7 @@ const FilmsItem: React.FC<IFilmItem> = ({ film }) => {
         navigate(`/films/${film.kinopoiskId}`, { replace: true, state: { id: film.kinopoiskId } })
     }
 
-    const handleClickPlayer = () => {
-        navigate(`/films/player/${film.kinopoiskId}`, { replace: true, state: { kinopoiskId: film.kinopoiskId } })
-    }
+
 
 
     return (
@@ -33,7 +31,6 @@ const FilmsItem: React.FC<IFilmItem> = ({ film }) => {
                     index < 2 ? <span className="genre" key={index}>{item.genre}</span> : null
                 )}
 
-                <button onClick={handleClickPlayer} className="watch">Смотреть</button>
             </div>
         </div>
     );

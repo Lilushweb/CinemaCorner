@@ -35,35 +35,68 @@
 }
 
 .facts {
-    position: absolute;
-    color: white;
+    position: relative;
     width: 400px;
     height: auto;
+    left: 260px;
+    bottom: 28px;
+
+}
+
+.factsText {
+    position: relative;
+    left: 19px;
+    top: 5px;
+
+    font-size: 24px;
+}
+
+.factsDiv {
+    position: absolute;
+    width: 650px;
+
     left: 700px;
     top: 275px;
+    color: white;
     font-size: 22px;
+    border: 2px solid #646cff;
+    border-radius: 15px;
+    padding-right: 10px;
 }
 
 .years {
-    position: absolute;
-    top: 550px;
-    left: 17%;
+    width: 100px;
+    margin-left: 3px;
 }
 
 .age {
-    position: absolute;
-    top: 548px;
-    left: 5%;
+    width: 100px;
+    margin-left: 20px;
 }
 
 .birthdayText {
-    position: absolute;
-    top: 500px;
-    left: 5%;
+    width: 160px;
+    margin-left: 20px;
 }
 
 .birthday {
+    width: 100px;
+    padding-left: 3px;
+}
+
+.infoDiv {
     position: absolute;
-    top: 500px;
-    left: 15%;
+    left: 5%;
+    top: 520px;
+    height: auto;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #646cff;
+    align-items: center;
+    border-radius: 19px;
+}
+
+.PlaceOfBirth {
+    margin-left: 20px;
 }

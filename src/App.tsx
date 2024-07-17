@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FilmsPage from "./components/FilmsPage.tsx";
 import IdFilmPage from "./components/IdFilmPage.tsx";
 import React from "react";
-import FilmsPlayer from './components/FIlmsPlayer.tsx';
+
 
 
 
@@ -22,7 +22,6 @@ function App() {
           <Route path="films/page/5" element={<FilmsPage page={5} />} />
 
           <Route path="films/:id" element={<IdFilmPage />} />
-          <Route path="films/player/:id" element={<FilmsPlayer />} />
         </Routes>
       </BrowserRouter>
     </div>

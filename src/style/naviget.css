@@ -10,7 +10,7 @@
 .pageContenirBottom {
     position: absolute;
     left: 40%;
-    top: 14%;
+    top: -60%;
     width: 22vw;
     height: 50px;
     display: flex;

@@ -17,7 +17,9 @@ export interface IStaff {
         sex: string
         webUrl: string
     },
-    error: boolean;
+    error: {
+        status: string;
+    };
     isLoading: boolean;
 
 

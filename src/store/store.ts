@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import userReducer from './reducers/UserSlice'
 import { filmsApi } from "../services/FIlmsServerApi";
 import { filmsApiPlayer } from "../services/FIlmsPlayerApi"
 
