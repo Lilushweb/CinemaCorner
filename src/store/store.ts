@@ -5,7 +5,6 @@ import { filmsApiPlayer } from "../services/FIlmsPlayerApi"
 
 
 const rootReducer = combineReducers({
-    userReducer,
     [filmsApiPlayer.reducerPath]: filmsApiPlayer.reducer,
     [filmsApi.reducerPath]: filmsApi.reducer
 })
