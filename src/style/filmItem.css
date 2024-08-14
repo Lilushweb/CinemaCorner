@@ -1,22 +1,20 @@
 img {
     position: absolute;
-    top: 3px;
+    top: 30px;
     height: 400px;
     width: 200px;
     margin-left: 50px;
-    margin-top: 40px;
 }
 
 .films {
     position: relative;
-    height: 600px;
-    width: 300px;
+    width: 303px;
+    height: 570px;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: column;
     border: 1px solid white;
-    margin-left: 30px;
 }
 
 .genre {
@@ -25,8 +23,6 @@ img {
     background-color: #454343;
     width: 190px;
     height: auto;
-    margin-left: 48px;
-    margin-bottom: 10px;
     display: flex;
     justify-content: center;
 }
@@ -40,53 +36,44 @@ img {
 .infoIsFilm {
     position: absolute;
     display: flex;
-    flex-wrap: wrap;
-    top: 450px;
+    align-items: center;
+    justify-content: center;
+    top: 440px;
     flex-direction: column;
-    width: 100%;
+    gap: 7px;
 }
 
-.naemFilm {
+.nameFilm {
     display: flex;
-    width: 302px;
+    align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .yearFilm {
     display: flex;
     align-items: start;
-    left: 10px;
     width: 302px;
     justify-content: space-evenly;
 }
 
-.ratingContener {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    top: 10px;
-    left: 8px;
-    border: 1px solid #646cff;
-    border-radius: 10px;
 
-
-
-}
 
 .info {
-    position: relative;
-    left: 100px;
-    top: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 24px;
 }
 
-.watch {
-    position: absolute;
-    width: 90px;
-    left: 100px;
-    margin-top: -440px;
+
+.btnlike {
+    height: 34px;
+    width: 34px;
+    position: relative;
+    top: -260px;
+    left: 260px;
+
+
 }

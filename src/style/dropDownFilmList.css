@@ -1,0 +1,25 @@
+.dropDownFilmList {
+    position: absolute;
+    left: 70px;
+    top: 80px;
+    background-color: rgb(46, 48, 47);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    z-index: 10;
+    border-radius: 15px;
+
+}
+
+.searchName {
+    left: 50px;
+    margin-top: 15px;
+    width: 300px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+
+}

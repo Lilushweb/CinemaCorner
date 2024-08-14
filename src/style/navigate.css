@@ -1,4 +1,4 @@
-.serch {
+.search {
     position: absolute;
     width: 30vw;
     height: 27px;
@@ -7,29 +7,20 @@
     text-indent: 8px;
 }
 
-.pageContenirBottom {
-    position: absolute;
-    left: 40%;
-    top: -60%;
-    width: 22vw;
-    height: 50px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-
 .page {
     width: 40px;
     height: 40px;
-    border: 1px solid lightyellow;
+    border: 1px solid #f1ad53;
     border-radius: 40px;
     background-color: lightyellow;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #f1ad53;
+    padding: 0px;
 }
 
-.pageContenirTop {
+.pageNavigateTop {
     position: absolute;
     left: 40%;
     top: 30px;
@@ -37,4 +28,16 @@
     height: 50px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.page:hover {
+    border-color: #ff6464;
+    color: #ff6464;
+    background-color: #999797;
+    transition: 0.7s;
+}
+
+.like {
+    position: absolute;
+    right: 2vw;
 }

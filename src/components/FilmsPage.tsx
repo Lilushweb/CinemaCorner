@@ -1,18 +1,18 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import FilmsContainer from "./FilmsContainer.tsx";
 import '../style/filmItem.css'
-import Naviget from "./Naviget.tsx";
+import Navigate from "./Navigate.tsx";
 
 interface IFilmsPageProps {
     page: number
 }
 
 
-const FilmsPage: FC <IFilmsPageProps> = ({page}) => {
+const FilmsPage: FC<IFilmsPageProps> = ({ page }) => {
     return (
         <div>
-            <Naviget/>
-            <FilmsContainer page={page}/>
+            <Navigate />
+            <FilmsContainer page={page} />
         </div>
     );
 };

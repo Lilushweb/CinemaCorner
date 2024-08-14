@@ -1,7 +1,12 @@
-.starReting {
+.ratingContener {
     position: absolute;
-    width: 302px;
-    height: 30px;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    left: 8px;
+    border: 1px solid #f1ad53;
+    border-radius: 10px;
 }

@@ -24,17 +24,17 @@ const IdFilmPage: React.FC = () => {
 
                     <img className="foto" alt={data.posterUrl} src={data.posterUrl} />
                     <h1 className="name">{data.nameRu}</h1>
-                    <div className="infoDiv">
+                    {(data.age || data.birthday || data.birthplace) && <div className="infoDiv">
                         {data.age > 0 && <h3 className='age'>Возраст :</h3>}
                         {data.age > 0 && <h3 className='years'>{data.age} </h3>}
                         {data.birthday && <h3 className='birthdayText'>Дата рождения :</h3>}
                         <h3 className='birthday'>{data.birthday}</h3>
                         <h3 className='PlaceOfBirth'>{data.birthplace}</h3>
-                    </div>
-                    <div className='factsDiv'>
+                    </div>}
+                    {data.facts.length >= 1 && <div className='factsDiv'>
                         {data.facts[0] && <div className='factsText'>Интересные факты :</div>}
                         {data.facts[0] && <div className='facts'>{data.facts[0]}</div>}
-                    </div>
+                    </div>}
 
                     <div className="profession">
                         <span className="Karera">Карьера</span>
