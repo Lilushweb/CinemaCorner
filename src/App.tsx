@@ -14,6 +14,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navigate to="page/1" replace />
+
       <BrowserRouter>
         <Routes>
           <Route path="films/page/1" element={<FilmsPage page={1} />} />
@@ -23,7 +25,6 @@ function App() {
           <Route path="films/page/5" element={<FilmsPage page={5} />} />
           <Route path="films/like" element={<LikePage />} />
           <Route path="films/:id" element={<IdFilmPage />} />
-          <Route path="films" element={<Navigate to="page/1" replace />} />
         </Routes>
       </BrowserRouter>
     </div>
