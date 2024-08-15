@@ -1,6 +1,6 @@
 import './App.css'
 import './style/filmItem.css'
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom"
 import FilmsPage from "./components/FilmsPage.tsx"
 import IdFilmPage from "./components/IdFilmPage.tsx"
 import React from "react"
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navigate to="page/1" replace />
+      <NavLink className="page" to={`/films/page/${1}`}>Базовая страничка</NavLink>
 
       <BrowserRouter>
         <Routes>
