@@ -45,7 +45,7 @@ const FilmsItem: FC<IFilmItem> = ({ film }) => {
             </button>
 
 
-            <img alt={film.posterUrl} src={film.posterUrl}></img>
+            <img alt={film.posterUrl} src={film.posterUrlPreview}></img>
             <div className="infoIsFilm">
                 <span className="nameFilm">{film.nameRu || film.nameOriginal}</span>
                 <div className="yearFilm">
